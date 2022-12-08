@@ -2,8 +2,10 @@
 
 var sumArray = function (arr) {
     let sum = 0;
+
     for (let i = 0; i < arr.length; i++) {
-        sum += arr[i]
+        let currentNum = arr[i];
+        sum += currentNum;
     }
     console.log(sum);
     return sum;
