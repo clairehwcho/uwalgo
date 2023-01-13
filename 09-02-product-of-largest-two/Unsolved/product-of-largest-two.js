@@ -13,27 +13,45 @@ const arr2 = [-10, -5, -2, -15, -1, -33, -88, -100];
 
 // Using two for loops
 const productOfLargestTwo = function (arr) {
-    let largestNum = arr[0];
-    let secondLargestNum = arr[0];
+    let largestNum = null;
+    let secondLargestNum = null;
 
     for (let i = 0; i < arr.length; i++) {
         const currentNum = arr[i];
-        if (currentNum > largestNum) {
+        if (currentNum > largestNum || largestNum === null) {
+            secondLargestNum = largestNum;
             largestNum = currentNum;
         }
-    }
-
-    for (let j = 0; j < arr.length; j++) {
-        const currentNum = arr[j];
-        if (currentNum < largestNum && currentNum > secondLargestNum) {
+        else if (currentNum > secondLargestNum || secondLargestNum === null) {
             secondLargestNum = currentNum;
         }
     }
-
     const product = largestNum * secondLargestNum;
-
     return product;
 };
+
+// const productOfLargestTwo = function (arr) {
+//     let largestNum = arr[0];
+//     let secondLargestNum = arr[0];
+
+//     for (let i = 0; i < arr.length; i++) {
+//         const currentNum = arr[i];
+//         if (currentNum > largestNum) {
+//             largestNum = currentNum;
+//         }
+//     }
+
+//     for (let j = 0; j < arr.length; j++) {
+//         const currentNum = arr[j];
+//         if (currentNum < largestNum && currentNum > secondLargestNum) {
+//             secondLargestNum = currentNum;
+//         }
+//     }
+
+//     const product = largestNum * secondLargestNum;
+
+//     return product;
+// };
 
 
 console.log(productOfLargestTwo(arr1));
