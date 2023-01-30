@@ -5,16 +5,25 @@
 const arraySearch2D = function (arr) {
     let count = 0;
 
-    if (arr.flat().length !== 0) {
-        arr.map((currentInnerArr) => {
-            currentInnerArr.map((currentElement) => {
-                if (currentElement === "X") {
-                    count++;
-                }
-            })
-        })
+    for (let i = 0; i < arr.length; i++){
+        for (let k = 0; i < arr[i].length; k++){
+            if (arr[i][k] === 'X'){
+                count++;
+            }
+        }
     }
     return count;
+
+    // if (arr.flat().length !== 0) {
+    //     arr.map((currentInnerArr) => {
+    //         currentInnerArr.map((currentElement) => {
+    //             if (currentElement === "X") {
+    //                 count++;
+    //             }
+    //         })
+    //     })
+    // }
+    // return count;
 };
 
 const arr1 = [["O", "O", "O"], ["X", "O", "O"], ["O", "O", "X"], ["O", "O", "X"]];

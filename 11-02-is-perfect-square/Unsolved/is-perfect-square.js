@@ -8,6 +8,22 @@ const isPerfectSquare = function (num) {
         }
     }
     return false;
+
+    // let i = 0;
+
+    // while (true) {
+    //     const currentSquare = i * i;
+
+    //     if (currentSquare === num) {
+    //         return true;
+    //     }
+    //     else if (currentSquare > num) {
+    //         return false;
+    //     }
+    //     else {
+    //         i++;
+    //     }
+    // }
 };
 
 const num1 = 9;
