@@ -3,24 +3,45 @@
 // Else return false
 
 const zeroesAndOnes = function (str) {
-    let freqMap = { "1": 0, "0": 0 };
+    let countZeroes = 0;
+    let countOnes = 0;
 
     for (let i = 0; i < str.length; i++) {
-        const currentNum = str[i];
+        let currentChar = str[i];
 
-        if (currentNum === "1") {
-            freqMap["1"]++;
+        if (currentChar === "1") {
+            countOnes++;
         }
-        else {
-            freqMap["0"]++;
+        else if (currentChar === "0") {
+            countZeroes++;
         }
-    };
+    }
 
-    if (freqMap["1"] === freqMap["0"]) {
+    if (countZeroes === countOnes) {
         return true;
     }
     return false;
 };
+
+// const zeroesAndOnes = function (str) {
+//     let freqMap = { "1": 0, "0": 0 };
+
+//     for (let i = 0; i < str.length; i++) {
+//         const currentNum = str[i];
+
+//         if (currentNum === "1") {
+//             freqMap["1"]++;
+//         }
+//         else {
+//             freqMap["0"]++;
+//         }
+//     };
+
+//     if (freqMap["1"] === freqMap["0"]) {
+//         return true;
+//     }
+//     return false;
+// };
 
 const str1 = '10101010';
 const expected1 = true;

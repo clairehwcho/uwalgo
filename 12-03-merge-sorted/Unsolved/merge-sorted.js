@@ -1,21 +1,56 @@
 // Write code to merge two sorted arrays into a new sorted array
 
 const mergeSorted = function (arr1, arr2) {
-    let mergedArr = [];
-    for (let i = 0; i < arr1.length; i++) {
-        const currentNum = arr1[i];
-        mergedArr.push(currentNum);
+    let resultArr = [];
+
+    let idx1 = 0;
+    let idx2 = 0;
+
+    while (idx1 < arr1.length && idx2 < arr2.length) {
+        let num1 = arr1[idx1];
+        let num2 = arr2[idx2];
+
+        if (num1 < num2) {
+            resultArr.push(num1);
+            idx1++;
+        }
+        else {
+            resultArr.push(num2);
+            idx2++;
+        }
     }
 
-    for (let j = 0; j < arr2.length; j++) {
-        const currentNum = arr2[j];
-        mergedArr.push(currentNum);
+    while (idx1 < arr1.length) {
+        let num1 = arr1[idx1];
+        resultArr.push(num1);
+        idx1++;
     }
 
-    mergedArr.sort((a, b) => a - b);
+    while (idx2 < arr2.length) {
+        let num2 = arr2[idx2];
+        resultArr.push(num2);
+        idx2++;
+    }
 
-    return mergedArr;
+    return resultArr;
 };
+
+// const mergeSorted = function (arr1, arr2) {
+//     let mergedArr = [];
+//     for (let i = 0; i < arr1.length; i++) {
+//         const currentNum = arr1[i];
+//         mergedArr.push(currentNum);
+//     }
+
+//     for (let j = 0; j < arr2.length; j++) {
+//         const currentNum = arr2[j];
+//         mergedArr.push(currentNum);
+//     }
+
+//     mergedArr.sort((a, b) => a - b);
+
+//     return mergedArr;
+// };
 
 
 const arr1a = [1, 3];
